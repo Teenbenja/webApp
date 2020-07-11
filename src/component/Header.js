@@ -1,5 +1,6 @@
 import React from 'react'
-import { Layout, Menu } from 'antd';
+import '../assets/styles/Header.less'
+import { Menu } from 'antd';
 import { AppstoreOutlined, AccountBookOutlined } from '@ant-design/icons';
 
 
@@ -16,22 +17,23 @@ class HomeHeader extends React.Component {
       };
     
       render() {
+        const logo = require('../assets/icons/logo.png')
         return (
-					<Layout.Header>
-						<div className="logo">T·W LAND</div>
+					<div className="header">
+						<img className="logo" src={logo} alt="logo" />
 						<Menu 
-            onClick={this.handleClick} 
-            selectedKeys={[this.state.current]} 
-            mode="horizontal" 
-            style={{borderBottom: 'none'}}>
-            <Menu.Item key="home" icon={<AppstoreOutlined />}>
-              Home
-            </Menu.Item>
-            <Menu.Item key="expense" icon={<AccountBookOutlined />}>
-              Expenses
-            </Menu.Item>
-          </Menu>
-					</Layout.Header>
+              className="headerMenu"
+              onClick={this.handleClick} 
+              selectedKeys={[this.state.current]} 
+              mode="horizontal">
+              <Menu.Item key="frondYard" className="menuItem" icon={<AppstoreOutlined />}>
+                Front Yard
+              </Menu.Item>
+              <Menu.Item key="expense" className="menuItem" icon={<AccountBookOutlined />}>
+                Study
+              </Menu.Item>
+            </Menu>
+					</div>
         )
       }
 }

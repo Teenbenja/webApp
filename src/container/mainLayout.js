@@ -1,6 +1,7 @@
 import React from 'react'
 import HomeHeader from '../component/Header'
-import { AppstoreOutlined, AccountBookOutlined } from '@ant-design/icons';
+import { Divider } from 'antd';
+import "../assets/styles/mainLayout.less"
 
 
 class MainLayout extends React.Component {
@@ -8,7 +9,10 @@ class MainLayout extends React.Component {
     
       render() {
         return (
-          <HomeHeader />
+          <div>
+            <HomeHeader />
+            <Divider style={{marginTop: '-1px'}}/>
+          </div>
         );
       }
 }

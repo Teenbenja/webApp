@@ -1,0 +1,34 @@
+
+@keyframes spin {
+	0% {
+		transform: rotateZ(0);
+	}
+	100% {
+		transform: rotateZ(360deg);
+	}
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    color: red;
+    height: 68px;
+    padding-left: 50px;
+    margin-top: -15px;
+    animation: spin 5s;
+}
+
+.headerMenu {
+    text-align: right;
+    flex-direction: row-reverse;
+    padding-right: 50px;
+    padding-bottom: 5px;
+}
+
+.menuItem {
+    padding-bottom: 4px;
+    margin-bottom: -4px;
+}
