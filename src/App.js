@@ -1,16 +1,15 @@
-import React, {Component} from 'react'
+import React from 'react'
 import './assets/styles/App.less'
-import MainLayout from './container/mainLayout'
+import HomeHeader from './component/Header'
+import ContentContainer from './container/contentContainer'
+import "./assets/styles/main.less"
 
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <MainLayout />
-      </div>
-    );
-  }
-}
+const App = () => (
+  <div className="main">
+    <HomeHeader />
+    <ContentContainer />
+  </div>
+)
 
 export default App;

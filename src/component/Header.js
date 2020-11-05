@@ -1,41 +1,40 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import '../assets/styles/Header.less'
 import { Menu } from 'antd';
 import { AppstoreOutlined, AccountBookOutlined } from '@ant-design/icons';
+import logo from '../assets/icons/logo.png'
 
+const HomeHeader = () => {
+  const pathKeyMap = {
+    '/test': 'frontYard',
+    '/text': 'expense'
+  }
+  const [key, setKey] = useState(pathKeyMap[window.location.pathname])
 
-class HomeHeader extends React.Component {
-    state = {
-        current: 'home',
-      };
-    
-      handleClick = e => {
-        console.log('click ', e);
-        this.setState({
-          current: e.key,
-        });
-      };
-    
-      render() {
-        const logo = require('../assets/icons/logo.png')
-        return (
-					<div className="header">
-						<img className="logo" src={logo} alt="logo" />
-						<Menu 
-              className="headerMenu"
-              onClick={this.handleClick} 
-              selectedKeys={[this.state.current]} 
-              mode="horizontal">
-              <Menu.Item key="frondYard" className="menuItem" icon={<AppstoreOutlined />}>
-                Front Yard
-              </Menu.Item>
-              <Menu.Item key="expense" className="menuItem" icon={<AccountBookOutlined />}>
-                Study
-              </Menu.Item>
-            </Menu>
-					</div>
-        )
-      }
+  const handleClick = e => {
+    setKey(e.key)
+  }
+
+  return (
+    <div className="header">
+      <Link to='/'>
+        <img onClick={handleClick} className="logo" src={logo} alt="logo" />
+      </Link>
+      <Menu 
+        className="headerMenu"
+        onClick={handleClick} 
+        selectedKeys={[key]} 
+        mode="horizontal">
+        <Menu.Item key="frontYard" className="menuItem" icon={<AppstoreOutlined />}>
+          <Link to='/test'>Front Yard</Link>
+        </Menu.Item>
+        <Menu.Item key="expense" className="menuItem" icon={<AccountBookOutlined />}>
+          <Link to='/text'>Study</Link>
+        </Menu.Item>
+      </Menu>
+    </div>
+  )
 }
 
 export default HomeHeader
