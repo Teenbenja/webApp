@@ -1,6 +1,6 @@
 import React from 'react'
 import './assets/styles/App.less'
-import HomeHeader from './component/Header'
+import HomeHeader from './component/organisms/Header'
 import ContentContainer from './container/contentContainer'
 import "./assets/styles/main.less"
 

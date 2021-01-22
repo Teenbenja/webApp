@@ -1,19 +1,11 @@
-import set from 'lodash/fp/set'
+import {combineReducers} from 'redux'
 
-const INITIALSTATE = {
-    allTodos: []
-}
+import toDoReducer from './toDo'
+import errorReducer from './errors'
 
-function rootReducer (state = INITIALSTATE, action) {
-    switch (action.type) {
-        case "SET_TODOS": {
-            const {data} = action.payload
-            return set('allTodos', data)(state)
-        }
-        default: {
-            return state
-        }
-    }
-}
+const rootReducer = combineReducers({
+    toDo: toDoReducer,
+    errors: errorReducer
+})
 
 export default rootReducer
