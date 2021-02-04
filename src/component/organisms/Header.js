@@ -8,7 +8,7 @@ import logo from '../../assets/icons/logo.png'
 const HomeHeader = () => {
   const pathKeyMap = {
     '/fontYard': 'frontYard',
-    '/text': 'expense'
+    '/book': 'expense'
   }
   const [key, setKey] = useState(pathKeyMap[window.location.pathname])
 
@@ -30,7 +30,7 @@ const HomeHeader = () => {
           <Link to='/frontYard'>Front Yard</Link>
         </Menu.Item>
         <Menu.Item key="expense" className="menuItem" icon={<AccountBookOutlined />}>
-          <Link to='/text'>Study</Link>
+          <Link to='/book'>Book</Link>
         </Menu.Item>
       </Menu>
     </div>

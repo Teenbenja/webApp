@@ -16,10 +16,11 @@ export default function TodoList(props) {
     }
 
     return (
-        <div>
+        <div style={{position: 'relative'}}>
             <List 
                 style={{padding: '10px'}}
                 dataSource={todos}
+                pagination={{defaultPageSize: 5}}
                 renderItem={item => (
                     <List.Item
                         actions={[<Button type="link" key="list-delete" onClick={itemOnClickHandle(item)}>Delete</Button>]}

@@ -9,7 +9,7 @@ const FrontYard = (props) => {
 
     return (
         <div>
-            <div>
+            <div style={{width: '50%', position: 'absolute', marginLeft: '25%'}}>
                 <ToDo 
                     todos={todos}
                     getTodos={getTodos}
